@@ -17,6 +17,8 @@
 		042F935228D52148002855D7 /* MeLiDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F935128D52148002855D7 /* MeLiDemoUITests.swift */; };
 		042F935428D52148002855D7 /* MeLiDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F935328D52148002855D7 /* MeLiDemoUITestsLaunchTests.swift */; };
 		04DDD8DF28DA37240082A93D /* CustomLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD8DE28DA37240082A93D /* CustomLog.swift */; };
+		04DDD8E128DA7C0B0082A93D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD8E028DA7C0B0082A93D /* Coordinator.swift */; };
+		04DDD8E328DA7D460082A93D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDD8E228DA7D460082A93D /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		042F935128D52148002855D7 /* MeLiDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLiDemoUITests.swift; sourceTree = "<group>"; };
 		042F935328D52148002855D7 /* MeLiDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLiDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		04DDD8DE28DA37240082A93D /* CustomLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLog.swift; sourceTree = "<group>"; };
+		04DDD8E028DA7C0B0082A93D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		04DDD8E228DA7D460082A93D /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				042F933228D52147002855D7 /* SceneDelegate.swift */,
 				042F933428D52147002855D7 /* ViewController.swift */,
 				04DDD8DE28DA37240082A93D /* CustomLog.swift */,
+				04DDD8E028DA7C0B0082A93D /* Coordinator.swift */,
+				04DDD8E228DA7D460082A93D /* MainCoordinator.swift */,
 				042F933628D52147002855D7 /* Main.storyboard */,
 				042F933928D52148002855D7 /* Assets.xcassets */,
 				042F933B28D52148002855D7 /* LaunchScreen.storyboard */,
@@ -262,7 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				042F933528D52147002855D7 /* ViewController.swift in Sources */,
+				04DDD8E328DA7D460082A93D /* MainCoordinator.swift in Sources */,
 				042F933128D52147002855D7 /* AppDelegate.swift in Sources */,
+				04DDD8E128DA7C0B0082A93D /* Coordinator.swift in Sources */,
 				042F933328D52147002855D7 /* SceneDelegate.swift in Sources */,
 				04DDD8DF28DA37240082A93D /* CustomLog.swift in Sources */,
 			);
