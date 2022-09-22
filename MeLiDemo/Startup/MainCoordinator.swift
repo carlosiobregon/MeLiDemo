@@ -14,11 +14,18 @@ class MainCoordinator: Coordinator {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.navigationController.view.backgroundColor = .white
     }
 
     func start() {
-        navigationController.view.backgroundColor = .white
         navigationController.isNavigationBarHidden = true
+        let rootController = SearchViewController()
+        rootController.searchViewModel = SearchViewModel(coordinator: self)
+        navigationController.setViewControllers([rootController], animated: true)
+    }
+    
+    func launchSearchResultsView(text: String){
+        
     }
     
 }
