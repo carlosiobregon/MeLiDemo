@@ -52,5 +52,26 @@ class MeliApi {
         })
     }
     
+    static func getDetail(byId: ItemSender, completion: @escaping (_ value: Item?) -> Void) {
+        
+        var components = URLComponents()
+        components.scheme = Scheme.https
+        components.host = Host.baseURL
+        let fullPath = "\(Paths.detail)\(byId.id)"
+        components.path = fullPath
+        
+        
+        ProxyRest<ItemResponse>.makeRequest(url: components.url, methodType: .get, body: NilBody(), completion: { result in
+            switch result {
+            case .success(let response):
+                let item = Item(id: response.id, title: response.title, price: response.price, currency: response.currency_id, urlPicture: response.pictures.first?.secure_url, attributes: nil)
+                completion(item)
+                
+            case .failure(_):
+                Log.error("Bad server response")
+            }
+        })
+    }
+    
 }
 

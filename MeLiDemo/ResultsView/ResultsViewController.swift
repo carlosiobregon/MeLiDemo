@@ -97,4 +97,8 @@ class ResultsViewController: UITableViewController {
     
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.launchDetail(index: indexPath.row)
+    }
+    
 }

@@ -11,6 +11,7 @@ protocol ResultViewModelProtocol {
     func searchItemsCount() -> Int
     func searchItemViewModel(at index: Int) -> SearchItemViewModel?
     func loadResults(completion: @escaping () -> Void)
+    func launchDetail(index: Int)
 }
 
 class ResultViewModel: ResultViewModelProtocol {
@@ -21,6 +22,15 @@ class ResultViewModel: ResultViewModelProtocol {
     init(search: SearchSender, coordinator: MainCoordinator?) {
         self.coordinator = coordinator
         self.search = search
+    }
+    
+    func launchDetail(index: Int) {
+        guard let item = searchItems?[index] else {
+            Log.warning("Could not get id")
+            return
+        }
+        let sender = ItemSender(id: item.id)
+        coordinator?.launchDetailView(item: sender)
     }
     
     // MARK: View Model Accessors

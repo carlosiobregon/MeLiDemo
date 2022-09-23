@@ -15,10 +15,10 @@ class MainCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.navigationController.view.backgroundColor = .systemBackground
-        configureAppearance()
     }
 
     func start() {
+        self.configureAppearance()
         let rootController = SearchViewController()
         rootController.searchViewModel = SearchViewModel(coordinator: self)
         navigationController.setViewControllers([rootController], animated: true)
@@ -29,6 +29,13 @@ class MainCoordinator: Coordinator {
         let resultsViewController = ResultsViewController()
         resultsViewController.viewModel = viewModel
         navigationController.pushViewController(resultsViewController, animated: true)
+    }
+    
+    func launchDetailView(item: ItemSender){
+        let viewModel = DetailViewModel(item: item, coordinator: self)
+        let detailViewController = DetailViewController()
+        detailViewController.viewModel = viewModel
+        navigationController.pushViewController(detailViewController, animated: true)
     }
     
 }
