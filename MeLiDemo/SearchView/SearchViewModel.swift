@@ -23,6 +23,7 @@ class SearchViewModel: SearchViewModelProtocol {
     }
     
     func launchSearch() {
-        coordinator?.launchSearchResultsView(text: searchText)
+        let search = SearchSender(text: searchText)
+        coordinator?.launchSearchResultsView(search: search)
     }
 }

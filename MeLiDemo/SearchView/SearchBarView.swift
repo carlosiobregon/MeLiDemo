@@ -11,12 +11,21 @@ class SearchBarView: UIView {
 
     
     //Mark: - Outlets
+    lazy var viewContent: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        return view
+    }()
+    
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.placeholder = "Buscar en Mercado Libre"
         searchBar.searchBarStyle = .minimal
         searchBar.isUserInteractionEnabled = true
+        searchBar.backgroundColor = .clear
+        searchBar.searchTextField.backgroundColor = .white
         return searchBar
     }()
     
@@ -41,6 +50,7 @@ class SearchBarView: UIView {
 //Mark: - ViewCodeConfiguration
 extension SearchBarView: ViewCodeConfiguration {
     func buildHierarchy() {
+        addSubview(viewContent)
         addSubview(searchBar)
     }
     
@@ -52,6 +62,17 @@ extension SearchBarView: ViewCodeConfiguration {
             searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
         ])
         
+        NSLayoutConstraint.activate([
+            viewContent.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            viewContent.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            viewContent.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            viewContent.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+        
+    }
+    
+    func configureViews() {
+        backgroundColor = ConstantsUI.color.background
     }
     
 }
